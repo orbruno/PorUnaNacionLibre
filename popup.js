@@ -90,6 +90,19 @@ body.modal-open {
 
 .checkout .view-show {
     display: none !important;
+}
+
+/* Show the logo that gets hidden */
+.nav-logo-hidden {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nav-logo {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }`;
 
 document.addEventListener('DOMContentLoaded', async function() {
