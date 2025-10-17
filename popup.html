@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 350px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #333;
+        font-size: 18px;
+      }
+
+      .domain-info {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .domain-name {
+        font-weight: bold;
+        color: #2196f3;
+        margin-bottom: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        height: 120px;
+        resize: vertical;
+        font-family: monospace;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .apply-btn {
+        background: #4caf50;
+        color: white;
+      }
+
+      .apply-btn:hover {
+        background: #45a049;
+      }
+
+      .remove-btn {
+        background: #f44336;
+        color: white;
+      }
+
+      .remove-btn:hover {
+        background: #da190b;
+      }
+
+      .reset-btn {
+        background: #ff9800;
+        color: white;
+      }
+
+      .reset-btn:hover {
+        background: #e68900;
+      }
+
+      .status {
+        text-align: center;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      .status.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .status.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .examples {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .examples h3 {
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .examples code {
+        display: block;
+        background: #f8f9fa;
+        padding: 5px;
+        border-radius: 3px;
+        font-size: 12px;
+        margin: 5px 0;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Por una Nacion libre!!</h1>
+    </div>
+
+    <div class="domain-info">
+      <div class="domain-name" id="currentDomain">Loading...</div>
+      <div id="domainStatus"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="cssInput">Custom CSS:</label>
+      <textarea
+        id="cssInput"
+        placeholder="CSS will be automatically applied to nacion.com"
+      >
+.tp-modal {
+  display: none !important;
+  opacity: unset !important;
+}
+
+.tp-backdrop.tp-active {
+  display: none !important
+}
+
+[class^="default__DivComponent"] {
+  visibility: visible !important;
+}
+
+[view="offer"] {
+  display: none !important;
+}
+
+#view-offer {
+  display: none !important;
+}
+
+html, body {
+  overflow: auto !important;
+  height: auto !important;
+}
+
+body.tp-modal-open,
+body.tp-scroll-lock,
+body.modal-open {
+  overflow: auto !important;
+  position: static !important;
+}
+
+#fusion-app, .page-wrapper, .content-wrapper {
+  position: static !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+[class="article-body-wrapper__styled"] {
+  display: unset !important;
+  opacity: unset !important;
+}
+
+.default__DivComponent-sc-oqc75h-3 {
+  opacity: unset !important;
+}
+
+.checkout .view-show {
+  display: none;
+}</textarea
+      >
+    </div>
+
+    <div class="button-group">
+      <button class="apply-btn" id="applyBtn">Remove Paywall</button>
+      <button class="remove-btn" id="removeBtn">Restore Paywall</button>
+    </div>
+
+    <div class="button-group" style="margin-top: 10px">
+      <button class="reset-btn" id="resetBtn">Reset Page</button>
+    </div>
+
+    <div id="status"></div>
+
+    <div class="examples">
+      <h3>What this extension does:</h3>
+      <code
+        >• Removes paywalls and subscription modals • Enables page scrolling •
+        Shows hidden article content • Blocks checkout prompts</code
+      >
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
