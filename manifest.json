@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Por una Nacion libre!!",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Remove paywalls and modals from nacion.com",
   "permissions": [
     "activeTab",
@@ -24,7 +24,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.nacion.com/*"],
-      "js": ["content.js"],
+      "js": ["reading-styles.js", "content.js"],
       "run_at": "document_end"
     }
   ],

@@ -161,62 +161,7 @@
 
     <div class="form-group">
       <label for="cssInput">Custom CSS:</label>
-      <textarea
-        id="cssInput"
-        placeholder="CSS will be automatically applied to nacion.com"
-      >
-.tp-modal {
-  display: none !important;
-  opacity: unset !important;
-}
-
-.tp-backdrop.tp-active {
-  display: none !important
-}
-
-[class^="default__DivComponent"] {
-  visibility: visible !important;
-}
-
-[view="offer"] {
-  display: none !important;
-}
-
-#view-offer {
-  display: none !important;
-}
-
-html, body {
-  overflow: auto !important;
-  height: auto !important;
-}
-
-body.tp-modal-open,
-body.tp-scroll-lock,
-body.modal-open {
-  overflow: auto !important;
-  position: static !important;
-}
-
-#fusion-app, .page-wrapper, .content-wrapper {
-  position: static !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-
-[class="article-body-wrapper__styled"] {
-  display: unset !important;
-  opacity: unset !important;
-}
-
-.default__DivComponent-sc-oqc75h-3 {
-  opacity: unset !important;
-}
-
-.checkout .view-show {
-  display: none;
-}</textarea
-      >
+      <textarea id="cssInput"></textarea>
     </div>
 
     <div class="button-group">
@@ -228,7 +173,7 @@ body.modal-open {
       <button class="reset-btn" id="resetBtn">Reset Page</button>
     </div>
 
-    <div id="status"></div>
+    <div id="status" role="status"></div>
 
     <div class="examples">
       <h3>What this extension does:</h3>
@@ -238,6 +183,7 @@ body.modal-open {
       >
     </div>
 
+    <script src="reading-styles.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>

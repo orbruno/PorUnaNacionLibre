@@ -1,23 +1,20 @@
 # Nacion.com Paywall Remover
 
-A Chrome extension that removes paywalls and subscription modals from nacion.com, allowing you to read articles without restrictions.
+A browser extension for Chrome and Brave that applies reading styles to article content already loaded by nacion.com.
 
 ## 🚀 Quick Start
 
-1. **Install**: Load this extension in Chrome (Developer mode)
+1. Prepare and load the `dist/` folder using the installation steps below.
 2. **Visit**: Go to any nacion.com article
 3. **Click**: Extension icon in toolbar
 4. **Remove**: Click "Remove Paywall" button
-5. **Read**: Enjoy unrestricted access to articles
+5. The current tab reloads with the reading styles enabled.
 
 ## ✨ What It Does
 
-- ❌ Removes subscription modals
-- ❌ Hides paywall prompts
-- ❌ Eliminates checkout screens
-- ✅ Shows hidden article content
-- ✅ Enables page scrolling
-- ✅ Restores normal browsing
+- Hides the subscription modal and its backdrop.
+- Shows article text already present in the page and restores scrolling.
+- Restores the original page when you select "Restore Paywall".
 
 ## 🎯 Target Domain
 
@@ -25,39 +22,19 @@ This extension **only works on nacion.com** and its subdomains for security and 
 
 ## 🔧 Installation
 
-1. Download/clone this extension folder
-2. Open Chrome → `chrome://extensions/`
+1. Run `node build-extension.js` from the project folder to prepare `dist/`
+2. Open `chrome://extensions/` in Chrome or `brave://extensions/` in Brave.
 3. Enable "Developer mode" (top right)
-4. Click "Load unpacked" → Select this folder
+4. Click "Load unpacked" → Select `dist/`
 5. Extension icon appears in toolbar
+
+After rebuilding, use "Reload" on the extension card and refresh the site.
 
 ## 🛠 How It Works
 
-The extension injects CSS that:
+The [reading styles](reading-styles.js) make the article wrapper visible, hide the subscription modal and backdrop, and restore scrolling while the modal is active. One URL selector matches the Google subscription iframe.
 
-```css
-/* Hides subscription modals */
-.tp-modal {
-  display: none !important;
-}
-
-/* Removes paywall overlays */
-.tp-backdrop.tp-active {
-  display: none !important;
-}
-
-/* Shows article content */
-[class="article-body-wrapper__styled"] {
-  display: unset !important;
-  opacity: unset !important;
-}
-
-/* Enables scrolling */
-html,
-body {
-  overflow: auto !important;
-}
-```
+The saved setting is used on subsequent pages on the same hostname. Version 1.2 uses the current reading styles when a previous version saved the original preset. Edited CSS is preserved and can still be changed in the popup.
 
 ## 🔒 Privacy & Security
 
@@ -71,7 +48,7 @@ body {
 
 **Not working?**
 
-- Refresh the page after clicking "Remove Paywall"
+- If you just updated the extension, reload it on the browser’s extensions page and refresh the article
 - Make sure you're on nacion.com
 - Check that extension is enabled
 - Try "Reset Page" button
@@ -79,7 +56,6 @@ body {
 **Still blocked?**
 
 - Some pages may have additional protection
-- Try refreshing and clicking the extension quickly
 - Clear browser cache if needed
 
 ## ⚖️ Legal Notice
@@ -87,5 +63,9 @@ body {
 This extension is for educational purposes. Users are responsible for complying with nacion.com's terms of service and local laws regarding web content access.
 
 ## 🔄 Version History
+
+**v1.2** updates the article and modal styles and removes script and iframe interception.
+
+**v1.1** saves the reading styles and reloads the tab when applying or restoring them.
 
 **v1.0** - Initial release targeting nacion.com paywalls

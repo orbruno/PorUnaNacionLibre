@@ -1,6 +1,8 @@
 # CSS Domain Modifier Chrome Extension
 
-A Chrome extension that allows you to inject custom CSS into any website and save it per domain.
+See [the Nacion AddOn instructions](README-NACION.md) for the current `nacion.com` build and installation steps.
+
+The original CSS Domain Modifier notes below describe the starting point for this project.
 
 ## Features
 
@@ -13,10 +15,7 @@ A Chrome extension that allows you to inject custom CSS into any website and sav
 
 ## Installation
 
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable "Developer mode" in the top right corner
-3. Click "Load unpacked" and select this extension folder
-4. The extension icon should appear in your Chrome toolbar
+Follow the [current installation steps](README-NACION.md).
 
 ## How to Use
 
